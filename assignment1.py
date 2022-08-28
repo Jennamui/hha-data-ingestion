@@ -1,4 +1,4 @@
-import packages
+#import packages
 import pandas as pd ## import pandas for general file types 
 import json ## imoprt json for json files
 import bs4 ## import bs4 for html files
@@ -16,5 +16,15 @@ import PyPDF2 ## import PyPDF2 for pdf files
 
 #Section 1
 #Downloaded dataset from Kaggle
-#import local excel file
-df = pd.read_excel('/Users/jennamui/Library/Containers/com.microsoft.Excel/Data/Downloads/COVID_diet_dataset.xls')
+#import local excel file and define each tab 
+tabl = pd.read_excel('/Users/jennamui/Library/Containers/com.microsoft.Excel/Data/Downloads/COVID_diet_dataset.xls', sheet_name='Food_Supply_kcal_Data')
+tab2 = pd.read_excel('/Users/jennamui/Library/Containers/com.microsoft.Excel/Data/Downloads/COVID_diet_dataset.xls', sheet_name='Fat_Supply_Quantity_Data'
+
+#Section 2
+#Found an open source json API via CMS
+#imported requests and json
+apiDataset = requests.get('https://data.cms.gov/data-api/v1/dataset/c8a139ee-9e31-444c-976f-bab6b287b871/data')
+apiDataset = apiDataset.json()
+                     
+#Section 3
+
